@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.demo.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.umd.config.js --progress --hide-modules",
-    "build:es6": "sh ./buildES6.sh"
+    "build:es6": "rm -rf dist&&cp -r src dist"
   },
   "repository": {
     "type": "git",
