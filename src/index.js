@@ -1,18 +1,9 @@
-import Menu from './Menu.vue'
-import Menu2 from './Menu2.vue'
-
-Menu.install = Vue=> Vue.component(Menu.name, Menu)
+import Title from './cm_title'
+import Menu1 from './menu'
 
 const install = (Vue) => {
-  Vue.component(Menu.name, Menu)
-  Vue.component(Menu2.name, Menu2)
+	Vue.component(Title.name, Title)
+	Vue.component(Menu1.name, Menu1)
 }
 
-export default {
-  install,
-}
-
-export {
-	Menu,
-  	Menu2
-}
+export default install

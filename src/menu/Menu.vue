@@ -1,5 +1,5 @@
 <template>
-<dl id='my_bottom_menu2' :style='{backgroundColor:background}' >
+<dl id='my_bottom_menu' :style='{backgroundColor:background}' >
   <!-- <dd v-for='(item,index) in list' :class='type===item.type?"on":""'>-->
   <dd v-for='(item,index) in list'  @click='toOther(item.to,type===item.type||+type===index+1)'>
     <i :class='item.type'></i>
@@ -9,9 +9,8 @@
 </template>
 
 <script>
-// import 'ment'
 export default {
-  name: 'bottom-menu2',
+  name: 'bottom-menu',
   props: ['background',"type"],
   data() {
     return {
@@ -37,7 +36,7 @@ export default {
   },
   methods:{
     toOther:function(to,run) {
-      
+     
       // console.log(this.$route.path,to)
       // if(!run){
       //     location.hash = to;
@@ -46,4 +45,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped src='./menu2.scss'></style>

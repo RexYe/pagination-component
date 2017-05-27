@@ -91,12 +91,17 @@ module.exports = {
             'errors-only': true
         }
     },
-    devtool: '#eval-source-map',
+    // devtool: process.env.NODE_ENV === 'production'?'':'#eval-source-map',
     plugins:[
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"development"'
             }
+        }),
+        new HtmlWebpackPlugin({                         //生成模板文件
+            template: __dirname + "/test/index.tpl.html",
+            filename: 'index.html',
+            chunks: ['app'],
         }),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,

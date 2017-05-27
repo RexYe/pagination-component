@@ -1,17 +1,28 @@
 var path = require('path')
+const fs = require('fs')
 var webpack = require('webpack')
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const entry = {}
+fs.readdirSync(__dirname+'/src').filter(function(file) {
+    return file !== '.DS_Store'
+}).forEach(function(file){
+    if(file.includes('index.js')) {
+        entry['.'] = `./src`
+    }else {
+        entry[file] = `./src/${file}`
+    }
+})
 
 module.exports = {
-    entry: {
-        app:['./src/index.js']
-    },
+    entry,
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'lib'),
         // “path”仅仅告诉Webpack结果存储在哪里，然而“publicPath”项则被许多Webpack的插件用于在生产模式下更新内嵌到css、html文件里的url值。
         //引入的图片地址公共路径：本地环境为根目录‘/’，正式环境为cdn地址
         publicPath: '/',
-        filename: 'index.js',
+        filename: '[name]/index.js',
         library: 'Component',
         libraryTarget: 'umd',
         // umdNamedDefine: true
@@ -39,20 +50,24 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        'css-loader',
+                        'postcss-loader'
+                    ]
+                })
             },
             {
                 test: /\.scss$/,
-                use:[
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                    'postcss-loader'
-                ]
+                use:ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        'css-loader',
+                        'sass-loader',
+                        'postcss-loader'
+                    ]
+                })
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -91,17 +106,24 @@ module.exports = {
     },
     // devtool: process.env.NODE_ENV === 'production' ? '' : '#eval-source-map',
     plugins:[
-        new CleanWebpackPlugin(['dist'], {
+        new ExtractTextPlugin({
+            filename:  (getPath) => {
+                console.log(getPath('[name]/style.css'))
+                return getPath('[name]/style.css')
+            },
+            allChunks: true
+        }),
+        new CleanWebpackPlugin(['lib'], {
             "root": __dirname,
             verbose: true,
             dry: false
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: false,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         
     ]
 }
