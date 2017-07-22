@@ -4,7 +4,7 @@
   "description": "vue组件模板",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.demo.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.demo.config.js",
     "build": "cross-env NODE_ENV=production webpack --watch --config webpack.umd.config.js --progress --hide-modules",
     "build:es6": "rm -rf dist&&cp -r src dist",
     "build:demo": "cross-env NODE_ENV=production webpack --config webpack.demo.config.js --progress --hide-modules"
@@ -37,6 +37,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.2",
+    "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
