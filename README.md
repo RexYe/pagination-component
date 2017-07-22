@@ -7,7 +7,7 @@ vue开发组件的脚手架,支持组件按需加载。
 ```
 1. npm install
 2. npm run build	// 打成umd格式的包
-3. npm run dev		// 运行demo
+3. npm run start		// 运行demo
 4. open 0.0.0.0:8082
 ```
 
