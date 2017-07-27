@@ -1,9 +1,11 @@
 # vue-component-pagination
+# 利用 vue2.0 实现一个分页组件
 
 基础：vue开发组件的脚手架,支持组件按需加载。
+
 分页组件：pagination
 
-### Usage
+### 使用步骤
 
 ```
 1. npm install
@@ -16,7 +18,6 @@
 
 * vue2
 * webpack2
-
 
 
 ### 目录结构
