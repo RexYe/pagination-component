@@ -1,6 +1,7 @@
-# vue-component-boilerplate
+# vue-component-pagination
 
-vue开发组件的脚手架,支持组件按需加载。
+基础：vue开发组件的脚手架,支持组件按需加载。
+分页组件：pagination
 
 ### Usage
 
@@ -36,9 +37,3 @@ vue开发组件的脚手架,支持组件按需加载。
 ### CHANGELOG
 
 1.0.0  初版
-
-1.0.1 删除shell依赖
-
-2.0.0 按需加载组件，css不需要单独引入
-
-2.0.1 demo增加cssnano,autoprefixer ie>=8 安卓>=4.3

@@ -1,9 +1,7 @@
-import Title from './cm_title'
-import Menu1 from './menu'
+import pagination1 from './pagination'
 
 const install = (Vue) => {
-	Vue.component(Title.name, Title)
-	Vue.component(Menu1.name, Menu1)
+	Vue.component(pagination1.name,pagination1)
 }
 
 export default install

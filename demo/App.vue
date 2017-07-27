@@ -1,26 +1,28 @@
 <template>
   <div id="app">
-    <cm-title 
-      :showMore='true'
-      moreLink='http://www.baidu.com'
-      title='课程直播' />
-    <bottom-menu />
+      <pagination paginationClass='myStyle' @pageChange="pageChange" :dataTotal="dataTotal" :pageEach="pageEach" :pageNow="pageNow"></pagination>
   </div>
 </template>
 
 <script>
-// 组件内可用
-// import TopTitle from '../dist'
-
+//自定义样式
+//import myStyle from '../src/pagination/myStyle.css'
 export default {
   name: 'app',
   components:{
-  	// TopTitle
   },
   data(){
     return {
+        dataTotal : 810,  //数据总条数
+        pageEach : 8,     //每页数据显示条数
+        pageNow : 1      //当前页数
     }
   },
+  methods:{
+    //当前页码
+    pageChange(a){
+      console.log(a)
+    }
+  }
 }
 </script>
-

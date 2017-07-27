@@ -4,9 +4,9 @@ import App from './App.vue'
 // import MMTitle from '..'
 // Vue.use(MMTitle)
 
-import {cm_title,menu} from '..'
-Vue.use(cm_title)
-Vue.use(menu)
+import {pagination} from '..'
+Vue.use(pagination)
+
 
 new Vue({
 	el: '#app',

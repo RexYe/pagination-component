@@ -1,7 +1,7 @@
 {
-  "name": "vue-component-boilerplate",
+  "name": "vue-component-pagination",
   "version": "2.0.0",
-  "description": "vue组件模板",
+  "description": "vue分页组件",
   "main": "lib/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.demo.config.js",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mcdyzg/vue-component-boilerplate.git"
+    "url": "git+https://github.com/RexYe/pagination-component.git"
   },
   "keywords": [
     "vue component",
     "boilerplate",
     "start-kit"
   ],
-  "author": "mcdyzg",
+  "author": "RexYe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mcdyzg/vue-component-boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/mcdyzg/vue-component-boilerplate#readme",
+  "homepage": "https://github.com/RexYe/pagination-component#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.23.1",
